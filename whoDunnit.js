@@ -35,19 +35,38 @@
 
 // EPISODE 3
 
-let murderer = 'Professor Plum';
-
-const declareMurderer = function() {
-  let murderer = 'Mrs. Peacock';
-  return `The murderer is ${murderer}.`;
-}
-
-const firstVerdict = declareMurderer();
-console.log('First Verdict: ', firstVerdict);
-
-const secondVerdict = `The murderer is ${murderer}.`;
-console.log('Second Verdict: ', secondVerdict);
+// let murderer = 'Professor Plum';
+//
+// const declareMurderer = function() {
+//   let murderer = 'Mrs. Peacock';
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// const firstVerdict = declareMurderer();
+// console.log('First Verdict: ', firstVerdict);
+//
+// const secondVerdict = `The murderer is ${murderer}.`;
+// console.log('Second Verdict: ', secondVerdict);
 
 // The firstVerdict will be 'First Verdict: The murderer is Mrs. Peacock', the secondVerdict will be
 // 'Second Verdict: The murderer is Professor Plum'
 // In the anonymous function declareMurderer the murderer variable is being reassigned, but only visible within that function.
+
+// EPISODE 4
+
+let suspectOne = 'Miss Scarlet';
+let suspectTwo = 'Professor Plum';
+let suspectThree = 'Mrs. Peacock';
+
+const declareAllSuspects = function() {
+  let suspectThree = 'Colonel Mustard';
+  return `The suspects are ${suspectOne}, ${suspectTwo}, ${suspectThree}.`;
+}
+
+const suspects = declareAllSuspects();
+console.log(suspects);
+console.log(`Suspect three is ${suspectThree}.`);
+
+// 'The suspects are Miss Scarlet, Professor Plum, Colonel Mustard'
+// 'Suspect three is Mrs. Peacock'
+// suspectThree is only reassigned within the function declareAllSuspects
