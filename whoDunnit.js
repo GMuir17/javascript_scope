@@ -1,34 +1,53 @@
 // EPISODE 1
 
-const scenario = {
-  murderer: 'Miss Scarlet',
-  room: 'Library',
-  weapon: 'Rope'
-};
-
-const declareMurderer = function() {
-  return `The murderer is ${scenario.murderer}.`;
-}
-
-const verdict = declareMurderer();
-console.log(verdict);
+// const scenario = {
+//   murderer: 'Miss Scarlet',
+//   room: 'Library',
+//   weapon: 'Rope'
+// };
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${scenario.murderer}.`;
+// }
+//
+// const verdict = declareMurderer();
+// console.log(verdict);
 
 // The murderer is Miss Scarlet. All constant variables are declared at the same level and so can see each other.
 
 // EPISODE 2
 
-const murderer = 'Professor Plum';
+// const murderer = 'Professor Plum';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mrs. Peacock';
+// }
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
 
-const changeMurderer = function() {
-  murderer = 'Mrs. Peacock';
-}
+// An error will occur because we are trying to change the value of a constant variable
+
+// EPISODE 3
+
+let murderer = 'Professor Plum';
 
 const declareMurderer = function() {
+  let murderer = 'Mrs. Peacock';
   return `The murderer is ${murderer}.`;
 }
 
-changeMurderer();
-const verdict = declareMurderer();
-console.log(verdict);
+const firstVerdict = declareMurderer();
+console.log('First Verdict: ', firstVerdict);
 
-// An error will occur because we are trying to change the value of a constant variable
+const secondVerdict = `The murderer is ${murderer}.`;
+console.log('Second Verdict: ', secondVerdict);
+
+// The firstVerdict will be 'First Verdict: The murderer is Mrs. Peacock', the secondVerdict will be
+// 'Second Verdict: The murderer is Professor Plum'
+// In the anonymous function declareMurderer the murderer variable is being reassigned, but only visible within that function.
