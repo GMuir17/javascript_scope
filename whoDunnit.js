@@ -121,32 +121,72 @@
 
 // EPISODE 7
 
-let murderer = 'Professor Plum';
-
-const changeMurderer = function() {
-  murderer = 'Mr. Green';
-
-  const plotTwist = function() {
-    let murderer = 'Colonel Mustard';
-
-    const unexpectedOutcome = function() {
-      murderer = 'Miss Scarlet';
-    }
-
-    unexpectedOutcome();
-  }
-
-  plotTwist();
-}
-
-const declareMurderer = function() {
-  return `The murderer is ${murderer}.`;
-}
-
-changeMurderer();
-const verdict = declareMurderer();
-console.log(verdict);
+// let murderer = 'Professor Plum';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mr. Green';
+//
+//   const plotTwist = function() {
+//     let murderer = 'Colonel Mustard';
+//
+//     const unexpectedOutcome = function() {
+//       murderer = 'Miss Scarlet';
+//     }
+//
+//     unexpectedOutcome();
+//   }
+//
+//   plotTwist();
+// }
+//
+// const declareMurderer = function() {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
 
 // Mr. Green did it
 // unexpectedOutcome will work and change the murderer within plotTwist,
 // but plotTwist makes murderer a let variable, and so it won't be seen outside of it
+
+// EPISODE 8
+
+const scenario = {
+  murderer: 'Mrs. Peacock',
+  room: 'Conservatory',
+  weapon: 'Lead Pipe'
+};
+
+const changeScenario = function() {
+  scenario.murderer = 'Mrs. Peacock';
+  scenario.room = 'Dining Room';
+
+  const plotTwist = function(room) {
+    if (scenario.room === room) {
+      scenario.murderer = 'Colonel Mustard';
+    }
+
+    const unexpectedOutcome = function(murderer) {
+      if (scenario.murderer === murderer) {
+        scenario.weapon = 'Candle Stick';
+      }
+    }
+
+    unexpectedOutcome('Colonel Mustard');
+  }
+
+  plotTwist('Dining Room');
+}
+
+const declareWeapon = function() {
+  return `The weapon is ${scenario.weapon}.`
+}
+
+changeScenario();
+const verdict = declareWeapon();
+console.log(verdict);
+
+// The candle stick was used
+// everything will flow as if we weren't even thinking about scope
