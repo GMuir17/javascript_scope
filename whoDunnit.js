@@ -96,19 +96,50 @@
 
 // EPISODE 6
 
-let murderer = 'Colonel Mustard';
+// let murderer = 'Colonel Mustard';
+//
+// const changeMurderer = function() {
+//   murderer = 'Mr. Green';
+//
+//   const plotTwist = function() {
+//     murderer = 'Mrs. White';
+//   }
+//
+//   plotTwist();
+// }
+//
+// const declareMurderer = function () {
+//   return `The murderer is ${murderer}.`;
+// }
+//
+// changeMurderer();
+// const verdict = declareMurderer();
+// console.log(verdict);
+
+// Mrs. White did it
+// plotTwist is a level deeper than changeMurderer but is then called within it
+
+// EPISODE 7
+
+let murderer = 'Professor Plum';
 
 const changeMurderer = function() {
   murderer = 'Mr. Green';
 
   const plotTwist = function() {
-    murderer = 'Mrs. White';
+    let murderer = 'Colonel Mustard';
+
+    const unexpectedOutcome = function() {
+      murderer = 'Miss Scarlet';
+    }
+
+    unexpectedOutcome();
   }
 
   plotTwist();
 }
 
-const declareMurderer = function () {
+const declareMurderer = function() {
   return `The murderer is ${murderer}.`;
 }
 
@@ -116,5 +147,6 @@ changeMurderer();
 const verdict = declareMurderer();
 console.log(verdict);
 
-// Mrs. White did it
-// plotTwist is a level deeper than changeMurderer but is then called within it
+// Mr. Green did it
+// unexpectedOutcome will work and change the murderer within plotTwist,
+// but plotTwist makes murderer a let variable, and so it won't be seen outside of it
